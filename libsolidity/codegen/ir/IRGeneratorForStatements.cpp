@@ -58,13 +58,13 @@ using namespace std::string_literals;
 namespace
 {
 
-optional<size_t> staticEncodingSize(vector<Type const*> const& _parameterTypes)
+std::optional<size_t> staticEncodingSize(std::vector<Type const*> const& _parameterTypes)
 {
 	size_t encodedSize = 0;
 	for (auto const* type: _parameterTypes)
 	{
 		if (type->isDynamicallyEncoded())
-			return nullopt;
+			return std::nullopt;
 		encodedSize += type->calldataHeadSize();
 	}
 	return encodedSize;
@@ -3389,7 +3389,7 @@ void IRGeneratorForStatements::revertWithError(
 )
 {
 	bool needsAllocation = true;
-	if (optional<size_t> size = staticEncodingSize(_parameterTypes))
+	if (std::optional<size_t> size = staticEncodingSize(_parameterTypes))
 		if (ranges::all_of(_parameterTypes, [](auto const* type) { return type && type->isValueType(); }))
 			needsAllocation = *size + 4 > CompilerUtils::generalPurposeMemoryStart;
 	Whiskers templ(R"({
