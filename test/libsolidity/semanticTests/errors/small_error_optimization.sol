@@ -14,6 +14,9 @@ contract B {
 }
 // ----
 // f() -> FAILURE, hex"92bbf6e8"
-// gas irOptimized: 270934
-// gas legacy: 310592
-// gas legacyOptimized: 273662
+// gas irOptimized: 222533
+// gas irOptimized code: 43200
+// gas legacy: 233746
+// gas legacy code: 37400
+// gas legacyOptimized: 224864
+// gas legacyOptimized code: 34200
