@@ -85,6 +85,7 @@ SignedIntegerType:
 Storage: 'storage';
 String: 'string';
 Struct: 'struct';
+Transient: 'transient';
 True: 'true';
 Try: 'try';
 Type: 'type';
