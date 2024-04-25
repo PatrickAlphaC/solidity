@@ -489,7 +489,7 @@ void DeclarationTypeChecker::endVisit(VariableDeclaration const& _variable)
 				typeLoc = DataLocation::CallData;
 				break;
 			case Location::Transient:
-				solUnimplementedAssert(false, "Transient data location is only supported for value types.");
+				solUnimplementedAssert(false, "Transient data location cannot be used in this kind of variable or parameter declaration.");
 				break;
 			case Location::Unspecified:
 				solAssert(!_variable.hasReferenceOrMappingType(), "Data location not properly set.");
@@ -511,8 +511,8 @@ void DeclarationTypeChecker::endVisit(VariableDeclaration const& _variable)
 			m_errorReporter.fatalTypeError(9259_error, _variable.location(), "Only constants of value type and byte array type are implemented.");
 	}
 
-	if (!type->isValueType() && typeLoc == DataLocation::Transient)
-		solUnimplementedAssert(false, "Transient data location is only supported for value types.");
+	if (!type->isValueType())
+		solUnimplementedAssert(typeLoc != DataLocation::Transient, "Transient data location is only supported for value types.");
 
 	_variable.annotation().type = type;
 }
