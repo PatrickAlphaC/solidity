@@ -165,7 +165,7 @@ locals[
 	boolean overrideSpecifierSet = false,
 ]
 :
-	Function (identifier | Fallback | Receive | Transient)
+	Function (identifier | Fallback | Receive)
 	LParen (arguments=parameterList)? RParen
 	(
 		{!$visibilitySet}? visibility {$visibilitySet = true;}
@@ -507,7 +507,7 @@ tryStatement: Try expression (Returns LParen returnParameters=parameterList RPar
  */
 catchClause: Catch (identifier? LParen (arguments=parameterList) RParen)? block;
 
-returnStatement: Return (expression | Transient)? Semicolon;
+returnStatement: Return expression? Semicolon;
 /**
  * An emit statement. The contained expression needs to refer to an event.
  */
