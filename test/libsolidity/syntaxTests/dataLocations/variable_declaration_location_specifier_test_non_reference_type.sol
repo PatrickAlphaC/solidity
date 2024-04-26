@@ -9,9 +9,9 @@ contract C {
     }
 }
 // ----
-// TypeError 6651: (38-53): Data location can only be specified for array, struct or mapping types, but "storage" was given.
-// TypeError 6651: (57-75): Data location can only be specified for array, struct or mapping types, but "storage" was given.
-// TypeError 6651: (79-93): Data location can only be specified for array, struct or mapping types, but "memory" was given.
-// TypeError 6651: (97-114): Data location can only be specified for array, struct or mapping types, but "memory" was given.
-// TypeError 6651: (118-135): Data location can only be specified for array, struct or mapping types, but "transient" was given.
-// TypeError 6651: (139-159): Data location can only be specified for array, struct or mapping types, but "transient" was given.
+// TypeError 6651: (47-62): Data location can only be specified for array, struct or mapping types, but "storage" was given.
+// TypeError 6651: (72-90): Data location can only be specified for array, struct or mapping types, but "storage" was given.
+// TypeError 6651: (100-114): Data location can only be specified for array, struct or mapping types, but "memory" was given.
+// TypeError 6651: (124-141): Data location can only be specified for array, struct or mapping types, but "memory" was given.
+// TypeError 6651: (151-168): Data location can only be specified for array, struct or mapping types, but "transient" was given.
+// TypeError 6651: (178-198): Data location can only be specified for array, struct or mapping types, but "transient" was given.
