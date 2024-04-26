@@ -85,7 +85,7 @@ SignedIntegerType:
 Storage: 'storage';
 String: 'string';
 Struct: 'struct';
-Transient: 'transient';
+Transient: 'transient';  // This is not correctly reflecting the implementation in the parser code, where "transient" is not a keyword and can be used as identifiers. This grammar rejects transient as identifiers in most places.
 True: 'true';
 Try: 'try';
 Type: 'type';

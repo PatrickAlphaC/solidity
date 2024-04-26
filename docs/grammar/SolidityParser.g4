@@ -371,7 +371,7 @@ variableDeclaration
 :
 	type=typeName
 	(
-		Tlocation=Transient name=identifier?
+		transientLocation=Transient name=identifier?
 		| location=dataLocation? name=identifier
 	);
 
