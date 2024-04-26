@@ -463,6 +463,7 @@ void DeclarationTypeChecker::endVisit(VariableDeclaration const& _variable)
 				typeLoc = (_variable.isConstant() || _variable.immutable()) ? DataLocation::Memory : DataLocation::Storage;
 				break;
 			case Location::Transient:
+				solAssert(!_variable.isConstant() && !_variable.immutable(), "");
 				typeLoc = DataLocation::Transient;
 				break;
 			default:

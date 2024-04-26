@@ -910,6 +910,11 @@ ASTPointer<VariableDeclaration> Parser::parseVariableDeclaration(
 		{
 			if (location != VariableDeclaration::Location::Unspecified)
 				parserError(ErrorId{3548}, "Location already specified.");
+			else if (mutability != VariableDeclaration::Mutability::Mutable)
+				parserError(
+					2197_error,
+					"Transient cannot be used as data location for constant or immutable."
+				);
 			else
 				location = VariableDeclaration::Location::Transient;
 
