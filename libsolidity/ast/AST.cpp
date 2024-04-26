@@ -817,7 +817,7 @@ std::set<VariableDeclaration::Location> VariableDeclaration::allowedDataLocation
 	using Location = VariableDeclaration::Location;
 
 	if (isStateVariable())
-		return std::set<Location>{ Location::Unspecified, Location::Transient };
+		return std::set<Location>{Location::Unspecified, Location::Transient};
 	else if (!hasReferenceOrMappingType() || isEventOrErrorParameter())
 		return std::set<Location>{ Location::Unspecified };
 	else if (isCallableOrCatchParameter())
