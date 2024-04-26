@@ -1,10 +1,13 @@
 contract test {
-    struct S { uint x; }
-    uint[] transient a;
+    struct S {
+        uint x;
+    }
     S transient b;
+
+    uint[] transient a;
     function f() public {
-      uint[] transient c;
-      S transient d;
+        uint[] transient c;
+        S transient d;
     }
 }
 // ----
